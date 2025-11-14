@@ -110,7 +110,7 @@ Puedes abrir un **issue**, proponer mejoras o enviar un **pull request**.
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/AlexPAXL/Estad-stica-Interactiva
+git clone https://github.com/AlexPAXL/Estadistica-Interactiva
 ```
 
 ## ⭐ Apoya el proyecto
@@ -128,4 +128,4 @@ Si este sistema te sirve o te parece interesante:
 Si deseas comunicarte o colaborar:
 
 **Tu Nombre / GitHub:** @AlexPAXL  
-**Correo (opcional):** Alexander.px.2@gmail.com
+**Correo:** Alexander.px.2@gmail.com
