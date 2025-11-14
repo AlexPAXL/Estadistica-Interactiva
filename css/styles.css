@@ -1,0 +1,26 @@
+/* Mantiene el mismo diseño original, solo separa estilos del HTML */
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 20px; /* default del original */
+}
+
+/* Fondo decorativo del panel izquierdo (igual al inline original) */
+.decorative-bg {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAoP1q4lczsL3SpBYPx7GgqOHUVMtpvxpQKlNi12R-xujz3Q1MA57kJzjx37Olsv4zpe5UtvFf1GZk51n5RqmY8uZUwpUI3p7TMBCKi_UE4-cuaus2kRgLoMR2uOGdkM7iQEhPXkVflfSMFvF56gyP6r8pUZV3Sn69V8eomF7dmiLn2Ex7ncIe_X1NUx8r4wGt7uSVvDPuqfysjWRq63Q2AIZYESZIzW61E-njyHzueXYQrjR4PlrMMWlSq4806l4Nq09KbUVtEc0T");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1; /* coincide con la clase opacity-10 usada */
+}
+
+.avatar-bg {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlueE8kRIFHIM1hgJyGFZr8--fbpciP_JhKKDROv4j-FYSrYNlS584GLVpkMfbSb2v7E33BnDaOVyiifFwVNKG4K5vRc1P_FxAMBmvkg8z4tA_NFQ6YU8sDzjlbV22EGe3LGKEB-qP7BU0PO0kGT_U_B7isW_9DZ-odc0SHz-eFpxCZvgXSHAz9N-Bu-0gnxt6npD0-xyk9lrm1thGqw1_lBEU2LL0ifA3MVY4pMiegdkXJ8P8HYdTzGWnudoO8OaxEaUBjZ0LeY4C");
+}
+
+.lg\:p-8 {
+  background-color: #111921;
+}
+
+.font-medium {
+  color: #61a9ab;
+}

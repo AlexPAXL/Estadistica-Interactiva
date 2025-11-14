@@ -1,0 +1,179 @@
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Estadística Interactiva - Login</title>
+    <link rel="icon" type="image/jpg" href="source/AlexPAXL.jpg" />
+
+    <!-- Carga primero la configuración para que Tailwind (CDN) la lea -->
+    <script src="tailwind/tailwind.config.js"></script>
+
+    <!-- Tailwind (CDN) con plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Fuentes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="font-display">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <main
+          class="flex min-h-screen w-full items-center justify-center p-4 lg:p-8"
+        >
+          <div
+            class="flex w-full max-w-6xl overflow-hidden rounded-xl bg-white shadow-lg dark:bg-[#111a22]"
+          >
+            <!-- Decorative Panel -->
+            <div
+              class="hidden lg:relative lg:flex lg:w-1/2 flex-col items-center justify-center bg-[#192633] p-12 text-center text-white"
+            >
+              <div
+                class="absolute inset-0 bg-cover bg-center opacity-10 decorative-bg"
+                data-alt="Abstract data visualization with various charts and graphs in cool tones."
+              ></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <span class="material-symbols-outlined text-primary text-6xl">
+                  monitoring
+                </span>
+                <h1
+                  class="text-white tracking-light text-[32px] font-bold leading-tight mt-4"
+                >
+                  Estadística Interactiva
+                </h1>
+                <p class="mt-2 max-w-sm text-lg text-[#92adc9]">
+                  Libera el potencial de tus datos con nuestras herramientas
+                  estadísticas intuitivas.
+                </p>
+              </div>
+            </div>
+
+            <!-- Form Panel -->
+            <div class="w-full lg:w-1/2 p-6 sm:p-8 md:p-12">
+              <div
+                class="layout-content-container flex flex-col max-w-[480px] mx-auto flex-1"
+              >
+                <h1
+                  class="text-white tracking-light text-[32px] font-bold leading-tight pb-3 pt-6 lg:hidden"
+                >
+                  flujo de estadísticas
+                </h1>
+
+                <div class="flex min-w-72 flex-col gap-2">
+                  <p
+                    class="text-black dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]"
+                  >
+                    Bienvenido
+                  </p>
+                  <p
+                    class="text-gray-500 dark:text-[#92adc9] text-base font-normal leading-normal"
+                  >
+                    Inicia sesión para desbloquear el poder de tus datos.
+                  </p>
+                </div>
+
+                <div class="flex flex-col gap-4 mt-8">
+                  <div class="flex flex-col gap-4">
+                    <label class="flex flex-col flex-1">
+                      <p
+                        class="text-gray-800 dark:text-white text-sm font-medium leading-normal pb-2"
+                      >
+                        Correo electrónico o nombre de usuario
+                      </p>
+                      <input
+                        id="username"
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-800 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324d67] bg-gray-50 dark:bg-[#192633] h-12 placeholder:text-gray-400 dark:placeholder:text-[#92adc9] p-3 text-sm font-normal leading-normal"
+                        placeholder="Introduce tu correo electrónico o nombre de usuario"
+                        type="email"
+                        value=""
+                      />
+                    </label>
+
+                    <label class="flex flex-col flex-1">
+                      <div class="flex justify-between items-baseline pb-2">
+                        <p
+                          class="text-gray-800 dark:text-white text-sm font-medium leading-normal"
+                        >
+                          Contraseña
+                        </p>
+                        <a
+                          class="text-sm font-medium text-primary hover:underline"
+                          href="#"
+                          >¿Has olvidado tu contraseña?</a
+                        >
+                      </div>
+                      <div class="flex w-full flex-1 items-stretch">
+                        <input
+                          id="password"
+                          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg rounded-r-none border-r-0 text-gray-800 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324d67] bg-gray-50 dark:bg-[#192633] h-12 placeholder:text-gray-400 dark:placeholder:text-[#92adc9] p-3 text-sm font-normal leading-normal"
+                          placeholder="Introduce tu contraseña"
+                          type="password"
+                          value=""
+                        />
+                        <button
+                          id="togglePwd"
+                          aria-label="Toggle password visibility"
+                          class="text-gray-400 dark:text-[#92adc9] flex border border-gray-300 dark:border-[#324d67] bg-gray-50 dark:bg-[#192633] items-center justify-center px-3 rounded-r-lg border-l-0 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/50"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >visibility</span
+                          >
+                        </button>
+                      </div>
+                    </label>
+                  </div>
+
+                  <button
+                    id="btnLoger"
+                    class="flex h-12 w-full items-center justify-center gap-3 rounded-lg border border-gray-300 dark:border-[#324d67] bg-white dark:bg-[#192633] px-6 text-base font-medium text-gray-800 dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-[#233648] focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-colors"
+                    type="button"
+                  >
+                    acceso
+                  </button>
+
+                  <div class="relative flex items-center py-2">
+                    <div
+                      class="flex-grow border-t border-gray-300 dark:border-[#324d67]"
+                    ></div>
+                    <span
+                      class="flex-shrink mx-4 text-sm text-gray-500 dark:text-[#92adc9]"
+                      >O</span
+                    >
+                    <div
+                      class="flex-grow border-t border-gray-300 dark:border-[#324d67]"
+                    ></div>
+                  </div>
+
+                  <p
+                    class="text-center text-sm text-gray-500 dark:text-[#92adc9] pt-4"
+                  >
+                    ¿No tienes una cuenta?
+                    <a class="font-medium text-primary hover:underline" href="#"
+                      >Inscribirse</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Lógica mínima (p. ej. ver/ocultar contraseña) -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

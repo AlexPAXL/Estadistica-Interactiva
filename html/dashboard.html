@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard | Estadística Interactiva</title>
+    <link rel="icon" type="image/jpg" href="../source/AlexPAXL.jpg" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-size: 20px; /* Default size */
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#5A6A7B] dark:text-[#92adc9]"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <!-- TopNavBar -->
+      <header
+        class="sticky top-0 z-10 w-full border-b border-gray-200/50 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <div
+          class="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        >
+          <a href="dashboard.html">
+            <div class="flex items-center gap-4">
+              <div class="size-6 text-primary">
+                <svg
+                  fill="none"
+                  viewbox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <h2
+                class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+              >
+                Estadística Interactiva
+              </h2>
+            </div>
+          </a>
+          <div class="flex items-center gap-6">
+            <div class="flex items-center gap-3">
+              <a
+                href="dashboard.html"
+                class="text-primary font-semibold text-sm border-b-2 border-primary"
+                >Inicio</a
+              >
+              <a
+                class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                href="about.html"
+                >Acerca de</a
+              >
+
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 relative group"
+                data-alt="User avatar placeholder"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyM5FGWR62UYoX7Eorwos_4qg_SAoYAee6gBIoHg04ymjTbwEwOIBRr6fdY30NmpCo2E-cc0-cNVM1b9hrfOJWjv1ypwVNy_c2lkDLGB5PyAf3KfZE_aFpgBGmWdHHuKa9UU4L7TmQLaN2VRmSRIUOqGno_v6dhjIhg8NILyTUR76uls5aCKpmQXch-mv8voaJcCWrz2EeQnBMgQ6WjXgMqYh-t-4_UzbwNxcc9bTOhlrpL6og1Bcec2cG5f9II3lghX--orKy6lMz');
+                "
+              >
+                <ul
+                  class="absolute hidden group-hover:block border-gray-200 text-gray-800 mt-10 shadow-lg rounded-md"
+                >
+                  <li>
+                    <a
+                      class="block px-4 py-2 text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                      onclick="cerrarSesion()"
+                      >Cerrar Sesión</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="hidden sm:flex flex-col text-right">
+                <span
+                  class="text-sm font-semibold text-gray-900 dark:text-white"
+                  >Admin</span
+                >
+                <span class="text-xs text-gray-500 dark:text-gray-400"
+                  >admin@miumg.edu.gt</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="flex-grow">
+        <div class="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <!-- PageHeading -->
+          <div class="mb-10">
+            <h1
+              class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]"
+            >
+              Herramientas estadísticas
+            </h1>
+            <p
+              class="text-gray-600 dark:text-[#92adc9] text-lg font-normal leading-normal mt-2"
+            >
+              Elige una distribución estadística o un concepto de probabilidad
+              para comenzar a calcular.
+            </p>
+          </div>
+          <!-- Topic Card Grid -->
+          <div
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          >
+            <!-- Card 01 Permutaciones -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span
+                    class="material-symbols-outlined !text-3xl text-blue-500 align-middle"
+                    >shuffle</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Permutaciones
+                </h3>
+                <p class="mt-2 text-sm">
+                  Número de formas posibles de ordenar objetos donde el orden sí
+                  importa.
+                </p>
+              </div>
+
+              <button
+                id="btn_Permutaciones"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 02 Permutaciones con r -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >sync_alt</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Permutaciones con r
+                </h3>
+                <p class="mt-2 text-sm">
+                  Número de formas de ordenar r objetos seleccionados de un
+                  total de n.
+                </p>
+              </div>
+
+              <button
+                id="btn_Permutaciones_r"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 03 Combinaciones -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >group_work</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Combinaciones
+                </h3>
+                <p class="mt-2 text-sm">
+                  Formas de seleccionar objetos de un conjunto donde el orden no
+                  importa.
+                </p>
+              </div>
+
+              <button
+                id="btn_Combinaciones"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 04 favorables/posibles -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >calculate</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Concepto de probabilidad y casos favorables/posibles.
+                </h3>
+                <p class="mt-2 text-sm">
+                  Razón entre casos favorables y casos posibles.
+                </p>
+              </div>
+
+              <button
+                id="btn_favorables_posibles"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 05 Regla de la suma. -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl">add</span>
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Regla de la suma.
+                </h3>
+                <p class="mt-2 text-sm">
+                  Probabilidad de que ocurra el evento A o el evento B.
+                </p>
+              </div>
+
+              <button
+                id="btn_Regla_suma"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 06 Eventos excluyentes -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl">block</span>
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Eventos excluyentes
+                </h3>
+                <p class="mt-2 text-sm">
+                  Eventos excluyentes – Eventos que no pueden ocurrir al mismo
+                  tiempo.
+                </p>
+              </div>
+
+              <button
+                id="btn_Eventos_excluyentes"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 07 Eventos no excluyentes. -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >all_inclusive</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Eventos no excluyentes.
+                </h3>
+                <p class="mt-2 text-sm">
+                  Eventos que pueden ocurrir simultáneamente o compartir
+                  resultados comunes.
+                </p>
+              </div>
+
+              <button
+                id="btn_Eventos_no_excluyentes"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 08 Regla del producto -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >close_fullscreen</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Regla del producto
+                </h3>
+                <p class="mt-2 text-sm">
+                  Probabilidad de que ocurran simultáneamente el evento A y el
+                  evento B.
+                </p>
+              </div>
+
+              <button
+                id="btn_Regla_producto"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 08 Eventos independientes -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >link_off</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Eventos independientes
+                </h3>
+                <p class="mt-2 text-sm">
+                  La ocurrencia de uno no afecta al otro.
+                </p>
+              </div>
+
+              <button
+                id="btn_Eventos_independientes"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 09 Eventos dependientes -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl">link</span>
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Eventos dependientes
+                </h3>
+                <p class="mt-2 text-sm">
+                  La ocurrencia de uno afecta la probabilidad del otro.
+                </p>
+              </div>
+
+              <button
+                id="btn_Eventos_dependientes"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 10 Complemento de un evento -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >highlight_off</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Complemento de un evento
+                </h3>
+                <p class="mt-2 text-sm">
+                  Probabilidad de que el evento A no ocurra.
+                </p>
+              </div>
+
+              <button
+                id="btn_Complemento_evento"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+
+            <!-- Card 1 -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >view_stream</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Probabilidad Condicional
+                </h3>
+                <p class="mt-2 text-sm">
+                  Probabilidad de que ocurra un evento dado que otro ya ha
+                  ocurrido.
+                </p>
+              </div>
+
+              <button
+                id="pb_condicional"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >target</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Probabilidad Objetiva
+                </h3>
+                <p class="mt-2 text-sm">
+                  Probabilidad determinada por la frecuencia relativa o datos
+                  empíricos.
+                </p>
+              </div>
+              <button
+                id="pb_objetiva"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >checklist</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Distribución Binomial
+                </h3>
+                <p class="mt-2 text-sm">
+                  Número de éxitos en un número fijo de ensayos con dos
+                  resultados posibles.
+                </p>
+              </div>
+              <button
+                id="pb_binominal"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >priority_high</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Distribución de Poisson
+                </h3>
+                <p class="mt-2 text-sm">
+                  Número de eventos que ocurren en un intervalo fijo de tiempo o
+                  espacio.
+                </p>
+              </div>
+              <button
+                id="pb_poisson"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 5 -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl">timer</span>
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Distribución Exponencial
+                </h3>
+                <p class="mt-2 text-sm">
+                  Tiempo entre eventos en un proceso de Poisson.
+                </p>
+              </div>
+              <button
+                id="pb_Exponencial"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 6 -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >repeat</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Distribución Binomial Negativa
+                </h3>
+                <p class="mt-2 text-sm">
+                  Ensayos necesarios para obtener un número determinado de
+                  éxitos.
+                </p>
+              </div>
+              <button
+                id="pb_binominalNegativa"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+            <!-- Card 7 -->
+            <div
+              class="group flex flex-col justify-between rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50"
+            >
+              <div>
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >show_chart</span
+                  >
+                </div>
+                <h3 class="text-gray-900 dark:text-white text-lg font-bold">
+                  Distribución Normal
+                </h3>
+                <p class="mt-2 text-sm">
+                  Distribución continua con forma de campana que representa
+                  fenómenos naturales.
+                </p>
+              </div>
+              <button
+                id="pb_DistribucionNormal"
+                class="mt-6 flex w-full items-center justify-center rounded-lg h-10 bg-primary/10 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../tailwind/tailwind.config.js"></script>
+    <script src="../js/calc_selector.js"></script>
+    <script src="../js/seccion.js"></script>
+  </body>
+</html>

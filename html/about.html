@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Acerca de | Estadística Interactiva</title>
+    <link rel="icon" type="image/jpg" href="../source/AlexPAXL.jpg" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#5A6A7B] dark:text-[#92adc9]"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <!-- Header -->
+      <header
+        class="sticky top-0 z-10 w-full border-b border-gray-200/50 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+      >
+        <div
+          class="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        >
+          <a href="dashboard.html">
+            <div class="flex items-center gap-4">
+            <div class="size-6 text-primary">
+              <svg
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2
+              class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+            >
+              Estadística Interactiva
+            </h2>
+          </div>
+          </a>
+          <div class="flex items-center gap-6">
+            <a
+              href="dashboard.html"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+              >Inicio</a
+            >
+            <a
+              href="about.html"
+              class="text-primary font-semibold text-sm border-b-2 border-primary"
+              >Acerca de</a
+            >
+            <div class="flex items-center gap-3">
+                 <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 relative group"
+                data-alt="User avatar placeholder"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyM5FGWR62UYoX7Eorwos_4qg_SAoYAee6gBIoHg04ymjTbwEwOIBRr6fdY30NmpCo2E-cc0-cNVM1b9hrfOJWjv1ypwVNy_c2lkDLGB5PyAf3KfZE_aFpgBGmWdHHuKa9UU4L7TmQLaN2VRmSRIUOqGno_v6dhjIhg8NILyTUR76uls5aCKpmQXch-mv8voaJcCWrz2EeQnBMgQ6WjXgMqYh-t-4_UzbwNxcc9bTOhlrpL6og1Bcec2cG5f9II3lghX--orKy6lMz');
+                "
+              >
+                <ul
+                  class="absolute hidden group-hover:block border-gray-200 text-gray-800 mt-10 shadow-lg rounded-md"
+                >
+                  <li>
+                    <a
+                      class="block px-4 py-2 text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                      onclick="cerrarSesion()"
+                      >Cerrar Sesión</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="hidden sm:flex flex-col text-right">
+                <span
+                  class="text-sm font-semibold text-gray-900 dark:text-white"
+                  >Admin</span
+                >
+                <span class="text-xs text-gray-500 dark:text-gray-400"
+                  >admin@miumg.edu.gt</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-grow">
+        <div class="container mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+          <h1
+            class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] mb-6"
+          >
+            Acerca de Estadística Interactiva
+          </h1>
+
+          <p class="text-lg mb-6">
+            <strong>Estadística Interactiva</strong> es una plataforma educativa
+            diseñada para ayudar a los estudiantes a comprender y aplicar los
+            principales conceptos de probabilidad y distribuciones estadísticas
+            de manera visual e intuitiva. Cada herramienta permite realizar
+            cálculos, observar resultados dinámicos e interpretar los datos con
+            claridad.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+            <div
+              class="rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6"
+            >
+              <h3
+                class="text-gray-900 dark:text-white text-xl font-bold mb-3 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                Objetivo
+              </h3>
+              <p class="text-sm leading-relaxed">
+                Facilitar el aprendizaje práctico de la probabilidad mediante
+                ejemplos interactivos, simulaciones y fórmulas automáticas que
+                refuerzan los fundamentos teóricos.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6"
+            >
+              <h3
+                class="text-gray-900 dark:text-white text-xl font-bold mb-3 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >school</span
+                >
+                Uso académico
+              </h3>
+              <p class="text-sm leading-relaxed">
+                Ideal para estudiantes de nivel básico y universitario que
+                buscan reforzar su comprensión en temas como permutaciones,
+                combinaciones, reglas de probabilidad y distribuciones
+                estadísticas.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 md:col-span-2"
+            >
+              <h3
+                class="text-gray-900 dark:text-white text-xl font-bold mb-3 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >functions</span
+                >
+                Temas cubiertos
+              </h3>
+              <ul class="list-disc list-inside text-sm space-y-1">
+                <li>Permutaciones y combinaciones</li>
+                <li>Probabilidad clásica, objetiva y condicional</li>
+                <li>Eventos excluyentes, dependientes e independientes</li>
+                <li>Reglas de la suma y del producto</li>
+                <li>Distribuciones: Binomial, Poisson, Exponencial y Normal</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 md:col-span-2"
+            >
+              <h3
+                class="text-gray-900 dark:text-white text-xl font-bold mb-3 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >developer_mode</span
+                >
+                Datos del Desarrollador
+              </h3>
+              <ul class="list-disc list-inside text-sm space-y-1">
+                <li>W. Alejandro Poou Xol</li>
+                <li>
+                  GitHub:
+                  <a href="https://github.com/AlexPAXL">
+                    https://github.com/AlexPAXL</a
+                  >
+                </li>
+                <li>Curso: Estadistica I</li>
+                <li>
+                  Link Video Presentación:
+                  <a href="https://youtu.be/ODjN7Asb-TU">
+                    https://youtu.be/ODjN7Asb-TU</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-xl border border-gray-200/80 dark:border-white/10 bg-white dark:bg-white/5 p-6 md:col-span-2"
+            >
+              <h3
+                class="text-gray-900 dark:text-white text-xl font-bold mb-3 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >book</span
+                >
+                Fuentes y Bibliografía de Probabilidad y Distribuciones
+              </h3>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                  <li>
+                    <strong>Walpole, R. E.</strong>, Myers, R. H., Myers, S. L.,
+                    & Ye, K. (2012).
+                    <em
+                      >Probabilidad y estadística para ingenieros y
+                      científicos</em
+                    >
+                    (9ª ed.). Pearson Educación.
+                  </li>
+
+                  <li>
+                    <strong>Mendenhall, W.</strong>, Beaver, R. J., & Beaver, B.
+                    M. (2013).
+                    <em>Introducción a la probabilidad y estadística</em> (14ª
+                    ed.). Cengage Learning.
+                  </li>
+
+                  <li>
+                    <strong>Bluman, A. G.</strong> (2018).
+                    <em>Elementary Statistics: A Step by Step Approach</em>
+                    (10th ed.). McGraw-Hill Education.
+                  </li>
+
+                  <li>
+                    <strong>Montgomery, D. C.</strong> &
+                    <strong>Runger, G. C.</strong> (2014).
+                    <em
+                      >Probabilidad y estadística aplicadas a la ingeniería</em
+                    >
+                    (6ª ed.). Limusa Wiley.
+                  </li>
+
+                  <li>
+                    <strong>Devore, J. L.</strong> (2011).
+                    <em
+                      >Probabilidad y estadística para ingeniería y ciencias</em
+                    >
+                    (8ª ed.). Cengage Learning.
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+
+          <div
+            class="mt-12 p-6 text-center border border-gray-200/80 dark:border-white/10 rounded-xl bg-white dark:bg-white/5"
+          >
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              Desarrollado con fines educativos
+            </h3>
+            <p class="text-sm">
+              Este proyecto fue creado como apoyo al curso de Estadística de la
+              Universidad Mariano Gálvez de Guatemala, combinando teoría,
+              práctica y tecnología.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../tailwind/tailwind.config.js"></script>
+    <script src="../js/seccion.js"></script>
+  </body>
+</html>

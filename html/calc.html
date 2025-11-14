@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Calculadora | Estadística Interactiva</title>
+    <link rel="icon" type="image/jpg" href="../source/AlexPAXL.jpg" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+      <!-- TopNavBar -->
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-b-[#233648] px-4 sm:px-6 lg:px-8 py-3 bg-background-light dark:bg-background-dark sticky top-0 z-50"
+      >
+        <a href="dashboard.html">
+          <div class="flex items-center gap-4 text-slate-800 dark:text-white">
+            <div class="size-6 text-primary">
+              <svg
+                fill="none"
+                viewbox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <h2
+              class="text-slate-800 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+            >
+              StatCalc
+            </h2>
+          </div>
+        </a>
+        <div class="hidden md:flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a
+              href="dashboard.html"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+              >Inicio</a
+            >
+            <a
+              href="about.html"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+              >Acerca de</a
+            >
+          </div>
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 relative group"
+            data-alt="User avatar placeholder"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyM5FGWR62UYoX7Eorwos_4qg_SAoYAee6gBIoHg04ymjTbwEwOIBRr6fdY30NmpCo2E-cc0-cNVM1b9hrfOJWjv1ypwVNy_c2lkDLGB5PyAf3KfZE_aFpgBGmWdHHuKa9UU4L7TmQLaN2VRmSRIUOqGno_v6dhjIhg8NILyTUR76uls5aCKpmQXch-mv8voaJcCWrz2EeQnBMgQ6WjXgMqYh-t-4_UzbwNxcc9bTOhlrpL6og1Bcec2cG5f9II3lghX--orKy6lMz');
+            "
+          >
+            <ul
+              class="absolute hidden group-hover:block border-gray-200 text-gray-800 mt-10 shadow-lg rounded-md"
+            >
+              <li>
+                <a
+                  class="block px-4 py-2 text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal"
+                  onclick="cerrarSesion()"
+                  >Cerrar Sesión</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="hidden sm:flex flex-col text-right">
+            <span class="text-sm font-semibold text-gray-900 dark:text-white"
+              >Admin</span
+            >
+            <span class="text-xs text-gray-500 dark:text-gray-400"
+              >admin@miumg.edu.gt</span
+            >
+          </div>
+        </div>
+        <button
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
+          <span class="material-symbols-outlined text-slate-700 dark:text-white"
+            >menu</span
+          >
+        </button>
+      </header>
+      <main class="flex-grow w-full max-w-screen-2xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div class="grid grid-cols-12 gap-8">
+          <!-- SideNavBar (Left Column) -->
+          <aside class="hidden lg:block col-span-12 lg:col-span-2">
+            <div class="sticky top-24">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col">
+                  <h1
+                    id="tituloOpciones"
+                    class="text-slate-800 dark:text-white text-base font-medium leading-normal"
+                  >
+                    Conditional Probability
+                  </h1>
+                  <p
+                    class="text-slate-500 dark:text-[#92adc9] text-sm font-normal leading-normal"
+                  >
+                    Topic Sections
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <a
+                    class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#233648]"
+                    href="#"
+                  >
+                    <span
+                      class="material-symbols-outlined text-slate-600 dark:text-white"
+                      >info</span
+                    >
+                    <p
+                      class="text-slate-700 dark:text-white text-sm font-medium leading-normal"
+                    >
+                      Introduction
+                    </p>
+                  </a>
+                  <a
+                    class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#233648]"
+                    href="#"
+                  >
+                    <span
+                      class="material-symbols-outlined text-slate-600 dark:text-white"
+                      >calculate</span
+                    >
+                    <p
+                      class="text-slate-700 dark:text-white text-sm font-medium leading-normal"
+                    >
+                      Formula &amp; Theory
+                    </p>
+                  </a>
+                  <a
+                    class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30"
+                    href="#"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary font-bold"
+                      >play_circle</span
+                    >
+                    <p class="text-primary font-bold text-sm leading-normal">
+                      Interactive Calculator
+                    </p>
+                  </a>
+                  <a
+                    class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#233648]"
+                    href="#"
+                  >
+                    <span
+                      class="material-symbols-outlined text-slate-600 dark:text-white"
+                      >bar_chart</span
+                    >
+                    <p
+                      class="text-slate-700 dark:text-white text-sm font-medium leading-normal"
+                    >
+                      Visualizations
+                    </p>
+                  </a>
+                  <a
+                    class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#233648]"
+                    href="#"
+                  >
+                    <span
+                      class="material-symbols-outlined text-slate-600 dark:text-white"
+                      >lightbulb</span
+                    >
+                    <p
+                      class="text-slate-700 dark:text-white text-sm font-medium leading-normal"
+                    >
+                      Examples
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <!-- Main Content (Center Column) -->
+          <div
+            class="col-span-12 lg:col-span-7 xl:col-span-6 flex flex-col gap-8"
+          >
+            <!-- Page Heading -->
+            <div class="flex flex-wrap justify-between items-center gap-3">
+              <h1
+                id="titulo"
+                class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]"
+              >
+                Conditional Probability
+              </h1>
+            </div>
+            <!-- Introduction Card -->
+            <div
+              class="bg-white dark:bg-[#192633] rounded-xl p-6 border border-gray-200 dark:border-[#324d67]"
+            >
+              <h2 class="text-slate-800 dark:text-white text-xl font-bold mb-2">
+                Introducción
+              </h2>
+              <p
+                id="texto"
+                class="text-slate-600 dark:text-[#92adc9] text-base leading-relaxed"
+              >
+                Conditional probability is the measure of the probability of an
+                event occurring, given that another event has already occurred.
+                It is a fundamental concept in probability theory and plays a
+                critical role in various fields like machine learning, finance,
+                and medical diagnosis.
+              </p>
+            </div>
+            <!-- Formula Card -->
+            <div
+              class="bg-white dark:bg-[#192633] rounded-xl p-6 border border-gray-200 dark:border-[#324d67]"
+            >
+              <h2 class="text-slate-800 dark:text-white text-xl font-bold mb-4">
+                Formula &amp; Teoria
+              </h2>
+              <p
+                id="descFormula"
+                class="text-slate-600 dark:text-[#92adc9] text-base mb-4"
+              >
+                La fórmula para la probabilidad es:
+              </p>
+              <div class="bg-gray-100 dark:bg-background-dark p-4 rounded-lg">
+                <code id="formula" class="font-mono text-primary text-lg"
+                  >P(A|B) = P(A ∩ B) / P(B)</code
+                >
+              </div>
+              <p class="text-slate-600 dark:text-[#92adc9] text-base mt-4">
+                Donde:
+              </p>
+              <ul
+                class="list-disc list-inside mt-2 space-y-1 text-slate-600 dark:text-[#92adc9]"
+              >
+                <li id="concepto1">
+                  <code class="font-mono text-slate-700 dark:text-gray-300"
+                    >P(A|B)</code
+                  >
+                  is the probability of event A occurring given that event B has
+                  occurred.
+                </li>
+                <li id="concepto2">
+                  <code class="font-mono text-slate-700 dark:text-gray-300"
+                    >P(A ∩ B)</code
+                  >
+                  is the probability of both events A and B occurring.
+                </li>
+                <li id="concepto3">
+                  <code class="font-mono text-slate-700 dark:text-gray-300"
+                    >P(B)</code
+                  >
+                  is the probability of event B occurring.
+                </li>
+              </ul>
+            </div>
+            <!-- Interactive Calculator -->
+            <div
+              class="bg-white dark:bg-[#192633] rounded-xl p-6 border border-gray-200 dark:border-[#324d67]"
+            >
+              <div class="flex flex-col gap-1 mb-6">
+                <h2 class="text-slate-800 dark:text-white text-xl font-bold">
+                  Calculadora interactiva
+                </h2>
+                <p
+                  id="descCalculadora"
+                  class="text-slate-500 dark:text-[#92adc9] text-base font-normal leading-normal"
+                >
+                  Introduzca las probabilidades para calcular la probabilidad
+                </p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <label class="flex flex-col">
+                  <p
+                    id="regla1"
+                    class="text-slate-700 dark:text-white text-base font-medium leading-normal pb-2"
+                  >
+                    P(A ∩ B) - Probability of A and B
+                  </p>
+                  <input
+                    id="txt_dato1"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary border border-gray-300 dark:border-[#324d67] bg-gray-50 dark:bg-[#111a22] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal"
+                    placeholder="ejemplo, 0.2"
+                    value=""
+                  />
+                </label>
+                <label class="flex flex-col">
+                  <p
+                    id="regla2"
+                    class="text-slate-700 dark:text-white text-base font-medium leading-normal pb-2"
+                  >
+                    P(B) - Probability of B
+                  </p>
+                  <input
+                    id="txt_dato2"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary border border-gray-300 dark:border-[#324d67] bg-gray-50 dark:bg-[#111a22] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal"
+                    placeholder="ejemplo, 0.5"
+                    value=""
+                  />
+                </label>
+                <label class="flex flex-col">
+                  <p
+                    id="regla2"
+                    class="text-slate-700 dark:text-white text-base font-medium leading-normal pb-2"
+                  >
+                    Dato 3
+                  </p>
+                  <input
+                    id="txt_dato3"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary border border-gray-300 dark:border-[#324d67] bg-gray-50 dark:bg-[#111a22] focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-[#92adc9] p-[15px] text-base font-normal leading-normal"
+                    placeholder="ejemplo, 0.5"
+                    value=""
+                  />
+                </label>
+              </div>
+              <button
+                id="btn_calcular"
+                class="w-full sm:w-auto mt-6 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] px-6 hover:bg-primary/90 transition-colors"
+              >
+                Calcular
+              </button>
+              <div
+                class="mt-8 border-t border-gray-200 dark:border-[#324d67] pt-6"
+              >
+                <h3 class="text-slate-800 dark:text-white text-lg font-bold">
+                  Resultado
+                </h3>
+                <div
+                  class="bg-gray-100 dark:bg-background-dark p-6 rounded-lg mt-2 text-center"
+                >
+                  <p
+                    id="tituloResult"
+                    class="text-slate-500 dark:text-[#92adc9] text-sm font-medium uppercase tracking-wider"
+                  >
+                    P(A|B)
+                  </p>
+                  <p
+                    id="txt_result"
+                    class="text-slate-900 dark:text-white text-5xl font-bold mt-2"
+                  >
+                    0.40
+                  </p>
+                  <p class="text-slate-600 dark:text-gray-400 mt-4 text-sm">
+                    Según los datos que proporcionaste, esta seria la
+                    probabilidad .
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visualization Card -->
+            <div
+              class="bg-white dark:bg-[#192633] rounded-xl p-6 border border-gray-200 dark:border-[#324d67]"
+            >
+              <h2 class="text-slate-800 dark:text-white text-xl font-bold mb-4">
+                Visualización dinámica
+              </h2>
+              <p
+                id="interDiagrama"
+                class="text-slate-600 dark:text-[#92adc9] text-base mb-6"
+              >
+                El diagrama de Venn que aparece a continuación se actualiza
+                según los valores de la calculadora. Visualiza la relación entre
+                los eventos A y B.
+              </p>
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg bg-gray-100 dark:bg-background-dark flex items-center justify-center"
+                data-alt="A venn diagram showing the intersection of two circles, representing events A and B."
+              >
+                <canvas
+                  id="chart"
+                  placeholder="Visualización de grafica"
+                  class="w-full h-64 mt-4 text-slate-500 dark:text-[#92adc9]"
+                ></canvas>
+              </div>
+            </div>
+          </div>
+          <!-- Right Sidebar -->
+          <aside class="hidden xl:block col-span-12 xl:col-span-4">
+            <div class="sticky top-24">
+              <div
+                class="bg-white dark:bg-[#192633] rounded-xl border border-gray-200 dark:border-[#324d67] overflow-hidden"
+              >
+                <!-- Tabs -->
+                <div
+                  class="flex border-b border-gray-200 dark:border-[#324d67]"
+                >
+                  <button
+                    class="flex-1 p-4 text-sm font-medium border-b-2 border-primary text-primary"
+                  >
+                    Calculation History
+                  </button>
+                </div>
+                <!-- History Content -->
+                <div
+                  id="div_history"
+                  class="p-4 flex flex-col gap-3 h-[600px] overflow-y-auto"
+                >
+                  <!--
+                <div
+                    class="bg-gray-100 dark:bg-background-dark rounded-lg p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-[#233648]"
+                  >
+                    <p class="text-slate-800 dark:text-white font-mono text-sm">
+                      P(A|B) = 0.2 / 0.5
+                    </p>
+                    <div class="flex justify-between items-center mt-1">
+                      <p class="text-primary font-bold text-lg">0.40</p>
+                      <p class="text-slate-500 dark:text-[#92adc9] text-xs">
+                        2 hours ago
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="bg-gray-100 dark:bg-background-dark rounded-lg p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-[#233648]"
+                  >
+                    <p class="text-slate-800 dark:text-white font-mono text-sm">
+                      P(A|B) = 0.3 / 0.8
+                    </p>
+                    <div class="flex justify-between items-center mt-1">
+                      <p class="text-primary font-bold text-lg">0.375</p>
+                      <p class="text-slate-500 dark:text-[#92adc9] text-xs">
+                        Yesterday
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="bg-gray-100 dark:bg-background-dark rounded-lg p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-[#233648]"
+                  >
+                    <p class="text-slate-800 dark:text-white font-mono text-sm">
+                      P(A|B) = 0.1 / 0.25
+                    </p>
+                    <div class="flex justify-between items-center mt-1">
+                      <p class="text-primary font-bold text-lg">0.40</p>
+                      <p class="text-slate-500 dark:text-[#92adc9] text-xs">
+                        3 days ago
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="bg-gray-100 dark:bg-background-dark rounded-lg p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-[#233648]"
+                  >
+                    <p class="text-slate-800 dark:text-white font-mono text-sm">
+                      P(A|B) = 0.5 / 0.9
+                    </p>
+                    <div class="flex justify-between items-center mt-1">
+                      <p class="text-primary font-bold text-lg">0.556</p>
+                      <p class="text-slate-500 dark:text-[#92adc9] text-xs">
+                        1 week ago
+                      </p>
+                    </div>
+                  </div>
+                --></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <script src="../tailwind/tailwind.config.js"></script>
+    <script src="../js/condiciones/condicional.js"></script>
+    <script src="../js/condiciones/operaciones.js"></script>
+    <script src="../js/seccion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
