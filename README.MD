@@ -80,11 +80,11 @@ Este repositorio tiene dos propósitos principales:
 
 ## 📷 Vista previa
 
-| Pantalla                                         | Descripción                    |
-| ------------------------------------------------ | ------------------------------ |
-| ![Dashboard](/source/dasboard.png)               | Panel principal del sistema    |
-| ![Cálculo](/source/calculo.png)                  | Ejemplo de cálculo interactivo |
-| ![Cálculo](/source/pantalla%20principal.png.png) | Pantalla completa              |
+| Pantalla                                       | Descripción                    |
+| ---------------------------------------------- | ------------------------------ |
+| ![Dashboard](/source/dasboard.png)             | Panel principal del sistema    |
+| ![Cálculo](/source/calculo.png)                | Ejemplo de cálculo interactivo |
+| ![Cálculo](/source/pantalla_principal.png.png) | Pantalla completa              |
 
 ---
 
